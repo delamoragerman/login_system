@@ -1,0 +1,21 @@
+<?php
+
+require_once 'models/database.mdl';
+
+class DatabaseCtrlr {
+    
+    private $model;
+    
+    // ********************************** CONSTRUCTOR **************************************** /
+    public function __CONSTRUCT(){
+        $this->model = new DatabaseMdl();
+    }
+    
+    // ********************************** Index **************************************** //
+    
+    public function Index(){
+        $result = $this->model->connect();
+        
+        return $result;
+    }
+}

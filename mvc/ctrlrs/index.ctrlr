@@ -1,0 +1,57 @@
+<?php
+
+// Incluye los modelos necesarios
+require_once 'models/index.mdl';
+
+class IndexCtrlr {
+
+    // Declara las propiedades
+    private $model;
+    private $database;
+    private $conn;
+
+    // Constructor
+    public function __CONSTRUCT() {
+        // Crea una instancia del modelo IndexMdl
+        $this->model = new IndexMdl();
+
+        // Crea una instancia del controlador de base de datos DatabaseCtrlr
+        $this->database = new DatabaseCtrlr();
+
+        // Obtiene una conexión a la base de datos
+        $this->conn = $this->database->Index();
+    }
+
+    // Acción para cargar la página principal (Index)
+    public function Index() {
+        // Lógica para la página principal
+        // Puedes incluir aquí cualquier lógica necesaria para la página principal
+        include ('views/head.view.php');
+        include ('views/header.view.php');
+        include ('views/index.view.php');
+        include ('views/footer_js.view.php');
+        echo '<script type="text/javascript" src="../mvc/js/index.js"></script>';
+        include ('views/footer.view.php');
+    }
+
+    // Acción para enviar datos a la base de datos
+    public function singUp() {
+        // Llama al método sendData del modelo IndexMdl
+        $respuesta = $this->model->singUp($this->conn, $_POST);
+
+        // Imprime la respuesta
+        echo json_encode($respuesta);
+    }
+
+    // Acción para validar el inicio de sesión
+    public function sendLogin() {
+        // Llama al método sendLogin del modelo IndexMdl
+        $respuesta = $this->model->sendLogin($this->conn, $_POST);
+
+        // Imprime la respuesta
+        echo json_encode($respuesta);
+    }
+
+}
+
+?>

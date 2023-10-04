@@ -1,0 +1,61 @@
+<?php
+
+class IndexMdl {
+
+    public function singUp($conn, $rec) {
+        // Verificar si el correo electrónico ya existe en la base de datos
+        $checkEmailQuery = "SELECT COUNT(*) as total FROM users WHERE email = :email";
+        $stmtCheckEmail = $conn->prepare($checkEmailQuery);
+        $stmtCheckEmail->bindParam(':email', $rec['email']);
+        $stmtCheckEmail->execute();
+        $emailExists = $stmtCheckEmail->fetch(PDO::FETCH_ASSOC);
+
+        if ($emailExists['total'] > 0) {
+            // El correo electrónico ya existe, mostrar alerta
+            return json_encode(array("estado" => false, "description" => "El correo electrónico ya existe. Por favor, utiliza otro.", "datos" => array()));
+        }
+
+        // Crear una consulta SQL para insertar un nuevo usuario
+        $insert = "INSERT INTO users VALUES(DEFAULT, ";
+        foreach ($rec as $key => $value) {
+            if ($key == "password") {
+                $insert .= " md5('$value'),";
+            } else {
+                $insert .= " '$rec[$key]',";
+            }
+        }
+
+        $insert .= " NOW())";
+
+        try {
+            $conn->query($insert);
+            $arr_ret = array("estado" => true, "description" => "Tu registro fue un éxito!", "details" => '', 'data' => array());
+        } catch (PDOException $e) {
+            $arr_ret = array("estado" => false, "description" => 'Error al registrar usuario.', "details" => $e->getMessage(), 'data' => array());
+        }
+
+        // Comprobar si hay más de un usuario en la tabla
+        $consulta = "SELECT COUNT(*) as total FROM users";
+        $queryData = $conn->query($consulta);
+        $filas = $queryData->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($filas[0]["total"] > 0) {
+            $rec["user"] = 1;
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    
+//    public function sendLogin(){
+//        $email = $rec['email'];
+//        $password = $rec['password'];
+//
+//        $consulta = "SELECT * FROM users WHERE email = '$email' AND password = md5('$password')";
+//        $queryData = $conn->query($consulta);
+//        $filas = $queryData->fetchAll(PDO::FETCH_ASSOC); 
+//    }
+
+}
+
+?>
