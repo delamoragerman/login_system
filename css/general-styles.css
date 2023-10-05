@@ -4,7 +4,7 @@
 }
 body{
     background-color: #CACACA;
-    padding: 150px;
+    padding: 150px 0px;
 }
 /* CSS */
 .container-login {
@@ -41,7 +41,7 @@ input[type="password"] {
     border: 1px solid #ddd;
     border-radius: 3px;
 }
-/* Cambiar el color del borde del input cuando está seleccionado */
+/* Cambiar el color del borde del input cuando estï¿½ seleccionado */
 .input-container input:focus {
     border-color: #007bff; 
     outline: none;  

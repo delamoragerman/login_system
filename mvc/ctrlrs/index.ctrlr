@@ -27,7 +27,7 @@ class IndexCtrlr {
         // Lógica para la página principal
         // Puedes incluir aquí cualquier lógica necesaria para la página principal
         include ('views/head.view.php');
-        include ('views/header.view.php');
+//        include ('views/header.view.php');
         include ('views/index.view.php');
         include ('views/footer_js.view.php');
         echo '<script type="text/javascript" src="../mvc/js/index.js"></script>';

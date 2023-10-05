@@ -2,10 +2,10 @@
     <div class="row">
         <div class="container-login">
             <div class="title-login">
-                <h4>LOGIN</h4>
+                <h4>Login</h4>
                 <div class="sub-title"></div>
             </div>
-            <form id="form_login" method="POST" action="index.ctrlr.php">
+            <form id="form_login" method="POST">
                 <div class="input-container">
                     <i class="fas fa-user"></i>
                     <input type="text" name="userName" placeholder="User Name" required>
@@ -29,7 +29,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Back Office</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -37,7 +37,7 @@
             <div class="modal-body">
                 <div class="container-login">
                     <div class="title-login">
-                        <h4>SINGUP</h4>
+                        <h4>SingUp</h4>
                         <div class="sub-title"></div>
                     </div>
                     <form id="form_singUp" method="POST">
@@ -46,15 +46,15 @@
                             <input type="text" name="name" placeholder="Name" required>
                         </div>
                         <div class="input-container">
-                            <i class="fas fa-user"></i>
+                            <i class="fa fa-users"></i>
                             <input type="text" name="lastName" placeholder="Last name" required>
                         </div>
                         <div class="input-container">
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-phone"></i>
                             <input type="text" name="phone" placeholder="Phone" required>
                         </div>
                         <div class="input-container">
-                            <i class="fas fa-user"></i>
+                            <i class="fa fa-at"></i>
                             <input type="text" name="email" placeholder="Email" required>
                         </div>
                         <div class="input-container">

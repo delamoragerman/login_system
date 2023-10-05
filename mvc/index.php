@@ -5,10 +5,10 @@ $nombre_controlador = $_REQUEST['_c_'];
 // Creamos el controlador
 require_once "ctrlrs/$nombre_controlador.ctrlr";
 require_once "ctrlrs/database.ctrlr";
-//require_once "ctrlrs/session.ctrlr";
+require_once "ctrlrs/session.ctrlr";
 
-//$session = new SessionCtrlr();
-//$session->Index();
+$session = new SessionCtrlr();
+$session->Index();
 
 
 //Pasa el nombre del controlador a una frase con espacios

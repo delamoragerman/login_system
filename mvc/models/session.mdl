@@ -1,0 +1,10 @@
+<?php
+
+
+class SessionMdl {
+    
+    public function Destroy(){
+        
+    }
+
+}

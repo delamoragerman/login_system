@@ -1,0 +1,27 @@
+<?php
+
+require_once 'models/panel.mdl';
+
+class PanelCtrlr {
+
+    private $model;
+    private $database;
+    private $conn;
+    private $session;
+
+
+    public function __CONSTRUCT(){
+        $this->model = new PanelMdl;
+        $this->database = new DatabaseCtrlr;
+        $this->conn = $this->database->Index();
+        $this->session = $session;
+    }
+    
+    public function Index(){
+        include ('views/head.view.php');
+        include ('views/header.view.php');
+        include ('views/panel.view.php');
+        include ('views/footer_js.view.php');
+        include ('views/footer.view.php');
+    }
+}

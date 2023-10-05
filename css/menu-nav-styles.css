@@ -1,0 +1,81 @@
+ /*Barra de navegación*/ 
+header {
+    background-color: #333;
+    color: #fff;
+    margin-top: -150px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.back-office {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.navbar-right .main-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-right .main-menu li {
+    margin-right: 20px;
+}
+
+.navbar-right .main-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-right .main-menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ Menú lateral izquierdo 
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    /*width: 30%;*/
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+.sidebar .sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar .sidebar-menu li {
+    margin: 10px 0;
+}
+
+.sidebar .sidebar-menu a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+}
