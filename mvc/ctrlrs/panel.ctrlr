@@ -9,19 +9,41 @@ class PanelCtrlr {
     private $conn;
     private $session;
 
-
-    public function __CONSTRUCT(){
+    public function __CONSTRUCT() {
         $this->model = new PanelMdl();
         $this->database = new DatabaseCtrlr();
         $this->conn = $this->database->Index();
         $this->session = $session;
     }
-    
-    public function Index(){
+
+    public function Index() {
         include ('views/head.view.php');
         include ('views/header.view.php');
         include ('views/panel.view.php');
         include ('views/footer_js.view.php');
+        echo '<script type="text/javascript" src="../mvc/js/panel.js"></script>';
         include ('views/footer.view.php');
     }
+
+    public function getUser() {
+        session_start();
+        $userId = $_SESSION['iduser']; // Asumimos que el ID del usuario está almacenado en la sesión
+        $resp = $this->model->getUser($this->conn, $userId);
+        echo $resp;
+    }
+
+    public function showUsers() {
+
+        $resp = $this->model->showUsers($this->conn, $_POST);
+
+        echo ($resp);
+    }
+
+    public function showMessages() {
+
+        $resp = $this->model->showMessages($this->conn, $_POST);
+
+        echo ($resp);
+    }
+
 }

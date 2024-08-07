@@ -6,9 +6,9 @@
         </div>
         <div class="navbar-right">
             <ul class="main-menu">
-                <li><a href="panel.view.php">Main</a></li>
-                <li><a href="#">Setings</a></li>
-                <li><a href="users.view.php">Users</a></li>
+                <li><a href="panel">Main</a></li>
+                <li><a href="setings">Setings</a></li>
+                <li><a href="users">Users</a></li>
                 <li class="main-menu dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Profile <span class="caret"></span></a>
                     <ul class="dropdown-menu">

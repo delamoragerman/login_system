@@ -1,6 +1,43 @@
 <?php
 
-
-class PanelMdl{
+class PanelMdl {
     
+    public function getUser($conn, $userId) {
+    $consulta = "SELECT `name` FROM users WHERE id = :userId";
+    try {
+        $stmt = $conn->prepare($consulta);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return json_encode($user);
+    } catch (PDOException $e) {
+        return json_encode(array("estado" => false, "description" => 'Error al obtener el nombre del usuario.', "details" => $e->getMessage(), 'data' => array()));
+    }
+}
+
+    
+    public function showUsers($conn, $rec) {
+
+        $consulta = "SELECT `name`, `lastName`, `email`, `phone` FROM users";
+        try {
+            $queryData = $conn->query($consulta);
+            $usuarios = $queryData->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($usuarios);
+        } catch (PDOException $e) {
+            return json_encode(array("estado" => false, "description" => 'Error al obtener usuarios.', "details" => $e->getMessage(), 'data' => array()));
+        }
+    }
+    
+    public function showMessages($conn, $rec){
+        
+        $consulta = "SELECT `email`, `consulta`, `fecha` FROM consultas_clientes";
+        try{
+            $queryData = $conn->query($consulta);
+            $messages = $queryData->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($messages);
+        } catch (PDOException $e){
+            return json_encode(array("estado" => false, "description" => 'Error al obtener consultas.', "details" => $e->getMessage(), 'data' => array()));
+        }
+    }
+
 }
