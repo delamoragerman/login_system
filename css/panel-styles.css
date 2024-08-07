@@ -1,0 +1,16 @@
+.panel{
+    margin-top: -430px;
+    margin-left: 210px;
+    
+}
+.card-panel{
+    padding: 5px 0px;
+    text-align: center;
+    border: 2px solid #818181;
+    border-radius: 10px;
+}
+.card-panel h4{
+    background: rgba(000, 000, 000, 0.8);
+    width: 100%;
+    color: #fff;
+}

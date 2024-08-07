@@ -10,11 +10,17 @@ require_once "ctrlrs/session.ctrlr";
 $session = new SessionCtrlr();
 $session->Index();
 
+if ($_POST["login"] != "1") {
+    $session->ValidateSession();
+}
+
 
 //Pasa el nombre del controlador a una frase con espacios
 $nombre_controlador = str_replace("_", " ", $nombre_controlador);
 //Convierte a maysculas la primera letra de cada palabra
 $nombre_clase_controlador .= str_replace(" ", "", ucwords(" " . $nombre_controlador)) . "Ctrlr";
+
+//$nombre_clase_controlador .= str_replace(".view.php", "", ucwords($nombre_controlador)) . "Ctrlr";
 
 $_controller = new $nombre_clase_controlador;
 

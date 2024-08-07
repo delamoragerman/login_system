@@ -5,27 +5,27 @@
                 <h4>Login</h4>
                 <div class="sub-title"></div>
             </div>
-            <form id="form_login" method="POST">
+            <form id="login" method="POST">
                 <div class="input-container">
                     <i class="fas fa-user"></i>
                     <input type="text" name="userName" placeholder="User Name" required>
                 </div>
                 <div class="input-container">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <input type="reset" value="Reset" class="btn btn-clear">
                 <input type="submit" value="Login" class="btn btn-primary">
-                <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#exampleModal">
-                          SingUp
-                    </button>
+                <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#modal_singUp">
+                    SingUp
+                </button>
             </form>
         </div>
     </div>
 </div>
 <br>
 <br>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_singUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

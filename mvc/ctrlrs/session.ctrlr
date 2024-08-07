@@ -16,17 +16,15 @@ class SessionCtrlr {
 
     public function Destroy() {
         unset($_SESSION["userName"]);
-        unset($_SESSION["name"]);
         unset($_SESSION["lastName"]);
-        unset($_SESSION["username"]);
         session_unset();
         session_destroy();
     }
     
     public function ValidateSession() {
-        if (!isset($_SESSION["iduser"]) && ($_SERVER["REQUEST_URI"] != "/single/index") && (!isset($_REQUEST["user"]))) {
+        if (!isset($_SESSION["userName"]) && ($_SERVER["REQUEST_URI"] != "/single/index") && (!isset($_REQUEST["userName"]))) {
             header('Location: /single/index');
-        } else if (isset($_SESSION["iduser"]) && ($_SERVER["REQUEST_URI"] == "/single/index")) {
+        } else if (isset($_SESSION["userName"]) && ($_SERVER["REQUEST_URI"] == "/single/index")) {
             header('Location: /single/panel');
         }
     }

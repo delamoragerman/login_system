@@ -11,8 +11,8 @@ class PanelCtrlr {
 
 
     public function __CONSTRUCT(){
-        $this->model = new PanelMdl;
-        $this->database = new DatabaseCtrlr;
+        $this->model = new PanelMdl();
+        $this->database = new DatabaseCtrlr();
         $this->conn = $this->database->Index();
         $this->session = $session;
     }

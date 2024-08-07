@@ -1,15 +1,26 @@
- /*Barra de navegación*/ 
+/*Barra de navegación*/ 
 header {
     background-color: #333;
     color: #fff;
+    height: 60px;
     margin-top: -150px;
 }
-
+a{
+    color: #fff;
+}
+header .main-menu a:hover, a:hover{
+    color: orangered;
+    text-decoration: none;
+}
+header .main-menu .dropdown-menu.show{
+    background-color: #333;
+    padding: 15px;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
 }
 
 .navbar-left {
@@ -30,7 +41,7 @@ header {
 .navbar-right .main-menu {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding-right: 0px;
     display: flex;
 }
 
@@ -46,36 +57,17 @@ header {
     text-decoration: none;
     color: #fff;
 }
-
- Menú lateral izquierdo 
-.sidebar {
+.sidebar{
     background-color: #333;
+    width: 15%;
+    height: 500px;
     color: #fff;
-    /*width: 30%;*/
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    overflow-x: hidden;
-    transition: 0.3s;
+    padding-top: 30px;
+    padding-left: 0px;
+    padding-right: 10px;
 }
-
-.sidebar.show {
-    left: 0;
-}
-
-.sidebar .sidebar-menu {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar .sidebar-menu li {
-    margin: 10px 0;
-}
-
-.sidebar .sidebar-menu a {
-    display: block;
+.sidebar-menu li{
     text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
+    list-style: none;
+    margin-bottom: 20px;
 }

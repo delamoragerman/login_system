@@ -2,6 +2,16 @@
 
 class DatabaseMdl{
     
+    public function varRequests() {
+        $return = [];
+        // Creo una variable por cada REQUEST con el mismo nombre que trae
+        foreach ($_REQUEST as $req => $value) {
+            $return += [$req => $value];
+        }
+
+        return $return;
+    }
+    
     public function connect(){
         $_servername = "localhost";
         $_username = "root";

@@ -51,21 +51,11 @@ class IndexMdl {
         $user = $rec['userName'];
         $password = $rec['password'];
 
-        // Modifica la consulta SQL para obtener el nombre de usuario y la contraseña hashada
-        $consulta = "SELECT userName, password FROM users WHERE userName = :user";
-        $stmt = $conn->prepare($consulta);
-        $stmt->bindParam(':user', $user);
-        $stmt->execute();
-        $userData = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // Agrega mensajes de depuración
-        echo "Usuario ingresado: $user<br>";
-        echo "Contraseña ingresada: $password<br>";
-        echo "Datos de usuario obtenidos: ";
-        var_dump($userData);
-
-        if ($userData && password_verify($password, $userData['password'])) {
-            $_SESSION["user"] = 1;
+        $consulta = "SELECT COUNT(*) as total FROM users WHERE userName = '$user' AND password = md5('$password')";
+        $queryData = $conn->query($consulta);
+        $filas = $queryData->fetchAll(PDO::FETCH_ASSOC);
+        if ($filas[0]["total"] > 0) {
+            $_SESSION["userName"] = 1;
             return 1;
         } else {
             return 0;

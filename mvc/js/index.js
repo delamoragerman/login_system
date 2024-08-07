@@ -20,7 +20,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#form_login").submit(function (e) {
+    $("#login").submit(function (e) {
         e.preventDefault();
 
         $.ajax({
