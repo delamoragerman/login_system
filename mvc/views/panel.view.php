@@ -1,20 +1,18 @@
 <div class="container panel">
     <div class="row">
-        <div class="col-6">
+        <div class="col-sm-6 col-lg-3">
             <div class="card-panel">
                 <div class="card-body">
-                    <i class="fas fa-user"></i>
-                    <h4 id="welcomeMessage">Bienvenido/a</h4>
+                    <h3 id="welcomeMessage"></h3>
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-sm-12 col-lg-9">
             <div class="card-panel">
                 <div class="card-body">
-                    <i class="fas fa-user"></i>
-                    <h4>Users</h4>
+                    <h4><i class="fas fa-users"></i>Users</h4>
                     <div>
-                        <table id="usersTable" border="1">
+                        <table id="usersTable" class="table table-hover table-dark" border="1">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -34,9 +32,8 @@
         <div class="col-12">
             <div class="card-panel">
                 <div class="card-body">
-                    <i class="fas fa-user"></i>
-                    <h4>Consultas</h4>
-                    <table id="consultasTable" border="1">
+                    <h4><i class="fas fa-comment-alt"></i>Consultas</h4>
+                    <table id="consultasTable" class="table table-hover table-dark" border="1">
                         <thead>
                             <tr>
                                 <th>Email</th>

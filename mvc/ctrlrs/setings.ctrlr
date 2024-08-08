@@ -1,8 +1,8 @@
 <?php
 
-require_once 'models/panel.mdl';
+require_once 'models/setings.mdl';
 
-class PanelCtrlr {
+class SetingsCtrlr {
 
     private $model;
     private $database;
@@ -10,7 +10,7 @@ class PanelCtrlr {
     private $session;
 
     public function __CONSTRUCT() {
-        $this->model = new PanelMdl();
+        $this->model = new SetingsMdl();
         $this->database = new DatabaseCtrlr();
         $this->conn = $this->database->Index();
         $this->session = $session;
@@ -19,8 +19,7 @@ class PanelCtrlr {
     public function Index() {
         include ('views/head.view.php');
         include ('views/header.view.php');
-        include ('views/side-bar.view.php');
-        include ('views/panel.view.php');
+        include ('views/setings.view.php');
         include ('views/footer_js.view.php');
         echo '<script type="text/javascript" src="../mvc/js/panel.js"></script>';
         include ('views/footer.view.php');

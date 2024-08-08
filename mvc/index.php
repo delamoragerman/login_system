@@ -7,6 +7,7 @@ require_once "ctrlrs/$nombre_controlador.ctrlr";
 require_once "ctrlrs/database.ctrlr";
 require_once "ctrlrs/session.ctrlr";
 require_once "ctrlrs/panel.ctrlr";
+require_once "ctrlrs/setings.ctrlr";
 
 $session = new SessionCtrlr();
 $session->Index();

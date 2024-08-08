@@ -1,36 +1,13 @@
 $(document).ready(function () {
+    // Load user name for welcome message
     $.ajax({
         type: 'POST',
         url: '/multiple/panel/getUser',
         success: function (response) {
-            var user = JSON.parse(response);
-            $('#welcomeMessage').text('Bienvenido/a ' + user.name);
+            var user = JSON.parse(response);            
+            $('#welcomeMessage').text('Bienvenido/a  '  + user.name);
         }
     });
-
-    $.ajax({
-        type: 'POST',
-        url: '/multiple/panel/showUsers',
-        success: function (response) {
-            var users = JSON.parse(response);
-            var usersTable = $('#usersTable tbody');
-            usersTable.empty(); // Clear existing data
-
-            users.forEach(function (user) {
-                var row = '<tr>';
-                row += '<td>' + user.name + '</td>';
-                row += '<td>' + user.lastName + '</td>';
-                row += '<td>' + user.email + '</td>';
-                row += '<td>' + user.phone + '</td>';
-                // Add other fields as needed
-                row += '</tr>';
-                usersTable.append(row);
-            });
-        }
-    });
-});
-
-$(document).ready(function () {
     // Load user data
     $.ajax({
         type: 'POST',

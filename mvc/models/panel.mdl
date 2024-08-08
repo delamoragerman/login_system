@@ -1,21 +1,24 @@
 <?php
 
 class PanelMdl {
-    
-    public function getUser($conn, $userId) {
-    $consulta = "SELECT `name` FROM users WHERE id = :userId";
-    try {
-        $stmt = $conn->prepare($consulta);
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        return json_encode($user);
-    } catch (PDOException $e) {
-        return json_encode(array("estado" => false, "description" => 'Error al obtener el nombre del usuario.', "details" => $e->getMessage(), 'data' => array()));
-    }
-}
 
-    
+    public function getUser($conn, $userName) {
+        $consulta = "SELECT name FROM users WHERE userName = '".$userName."'";
+        //$consulta = "SELECT name FROM users WHERE userName = 'Genesys'";
+        try {
+            $stmt = $conn->prepare($consulta);
+            $stmt->bindParam(':userName', $userName, PDO::PARAM_INT);
+            $stmt->execute();
+//            var_dump($stmt->errorInfo());
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            return json_encode($user);
+            //return $userId;
+        } catch (PDOException $e) {
+//            return "error";
+            return json_encode(array("estado" => false, "description" => 'Error al obtener el nombre del usuario.', "details" => $e->getMessage(), 'data' => array()));
+        }
+    }
+
     public function showUsers($conn, $rec) {
 
         $consulta = "SELECT `name`, `lastName`, `email`, `phone` FROM users";
@@ -27,15 +30,15 @@ class PanelMdl {
             return json_encode(array("estado" => false, "description" => 'Error al obtener usuarios.', "details" => $e->getMessage(), 'data' => array()));
         }
     }
-    
-    public function showMessages($conn, $rec){
-        
+
+    public function showMessages($conn, $rec) {
+
         $consulta = "SELECT `email`, `consulta`, `fecha` FROM consultas_clientes";
-        try{
+        try {
             $queryData = $conn->query($consulta);
             $messages = $queryData->fetchAll(PDO::FETCH_ASSOC);
             return json_encode($messages);
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return json_encode(array("estado" => false, "description" => 'Error al obtener consultas.', "details" => $e->getMessage(), 'data' => array()));
         }
     }
