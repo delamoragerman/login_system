@@ -21,19 +21,6 @@
             <div class="col-sm-12 col-lg-6">
                 <div class="card-panel">
                     <div class="card-body">
-                        <h3>Update Prices</h3>
-                        <form>
-                            <label>Name</label>
-                            <input type="text">
-                            <label>Price</label>
-                            <input type="number">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <div class="card-panel">
-                    <div class="card-body">
                         <h3>Add Developers</h3>
                         <form>
                             <label>Name</label>
@@ -49,6 +36,19 @@
                             </select>
                             <label>Contributions</label>
                             <textarea></textarea>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <div class="card-panel">
+                    <div class="card-body">
+                        <h3>Update Prices</h3>
+                        <form>
+                            <label>Name</label>
+                            <input type="text">
+                            <label>Price</label>
+                            <input type="number">
                         </form>
                     </div>
                 </div>
