@@ -8,6 +8,7 @@ require_once "ctrlrs/database.ctrlr";
 require_once "ctrlrs/session.ctrlr";
 require_once "ctrlrs/panel.ctrlr";
 require_once "ctrlrs/setings.ctrlr";
+require_once "ctrlrs/users.ctrlr";
 
 $session = new SessionCtrlr();
 $session->Index();

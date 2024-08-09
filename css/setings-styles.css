@@ -1,0 +1,21 @@
+.setings{
+}
+.setings .card-panel h3{
+    background: rgba(000, 000, 000, 0.8);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.setings .card-panel form{
+    background-color: #343A40;
+    margin: px;
+    padding: 20px;
+}
+label{
+    color: #fff;
+}
+.setings .card-panel form label, input{
+    display: block;
+    margin-bottom: 5px;
+}

@@ -32,7 +32,7 @@
         <div class="col-12">
             <div class="card-panel">
                 <div class="card-body">
-                    <h4><i class="fas fa-comment-alt"></i>Consultas</h4>
+                    <h4><i class="fas fa-envelope-open"></i>Consultas</h4>
                     <table id="consultasTable" class="table table-hover table-dark" border="1">
                         <thead>
                             <tr>
@@ -45,14 +45,6 @@
                             <!-- Consultas data will be inserted here -->
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card-panel">
-                <div class="card-body">
-                    <i class="fas fa-user"></i>
-                    <h4>Users</h4>
                 </div>
             </div>
         </div>

@@ -1,0 +1,28 @@
+<?php
+
+require_once 'models/users.mdl';
+
+class UsersCtrlr {
+
+    private $model;
+    private $database;
+    private $conn;
+    private $session;
+
+    public function __CONSTRUCT() {
+        $this->model = new UsersMdl();
+        $this->database = new DatabaseCtrlr();
+        $this->conn = $this->database->Index();
+        $this->session = $session;
+    }
+
+    public function Index() {
+        include ('views/head.view.php');
+        include ('views/header.view.php');
+        include ('views/users.view.php');
+        include ('views/footer_js.view.php');
+        echo '<script type="text/javascript" src="../mvc/js/panel.js"></script>';
+        include ('views/footer.view.php');
+    }
+
+}

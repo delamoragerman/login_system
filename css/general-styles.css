@@ -16,7 +16,8 @@ body{
     max-width: 300px;
     margin: 0 auto;
 }
-
+#login{
+}
 .title-login h4 {
     color: #333;
 }
@@ -37,6 +38,7 @@ body{
 input[type="text"],
 input[type="password"] {
     width: 80%;
+    margin: auto;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 3px;
