@@ -1,21 +1,28 @@
-/*Barra de navegación*/ 
+/* Barra de navegación */
 header {
     background-color: #333;
     color: #fff;
     height: 60px;
-    margin-top: -150px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
-a{
+
+a {
     color: #fff;
 }
-header .main-menu a:hover, a:hover{
+
+header .main-menu a:hover, a:hover {
     color: orangered;
     text-decoration: none;
 }
-header .main-menu .dropdown-menu.show{
+
+header .main-menu .dropdown-menu.show {
     background-color: #333;
     padding: 15px;
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -57,17 +64,35 @@ header .main-menu .dropdown-menu.show{
     text-decoration: none;
     color: #fff;
 }
-.sidebar{
+
+/* Sidebar */
+.sidebar {
     background-color: #333;
     width: 15%;
-    height: 500px;
+    height: 100vh;
     color: #fff;
-    padding-top: 30px;
-    padding-left: 0px;
-    padding-right: 10px;
+    padding-top: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
 }
-.sidebar-menu li{
+
+.sidebar-menu {
+    padding-left: 20px;
+}
+
+.sidebar-menu li {
     text-decoration: none;
     list-style: none;
     margin-bottom: 20px;
+}
+
+.sidebar-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar-menu a:hover {
+    color: orangered;
 }

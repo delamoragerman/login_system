@@ -1,21 +1,59 @@
-.panel{
-    margin-top: -500px;
+/* Estilos generales para el panel */
+.panel {
+    margin-top: -60px;
     margin-left: 210px;
-    
+    padding: 20px; /* Añadí un padding para crear un espacio alrededor del contenido */
 }
-.card-panel{
-    padding: 5px 0px;
-/*    border: 2px solid #818181;
-    border-radius: 10px;*/
-    /*margin-bottom: 10px;*/
+
+/* Estilo de los card panels */
+.card-panel {
+    background-color: #343A40;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
-.card-panel h4{
-    background: rgba(000, 000, 000, 0.8);
-    width: 100%;
+
+/* Estilo para los encabezados en los card panels */
+.card-panel h4,
+.card-panel h3 {
+    background: rgba(0, 0, 0, 0.8);
     color: #fff;
     text-align: center;
     padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
-.card-panel h4 i{
+
+/* Iconos en los encabezados */
+.card-panel h4 i {
     margin-right: 8px;
+}
+
+/* Estilos para las tablas */
+.card-panel table {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Estilo para las celdas de las tablas */
+.card-panel table th,
+.card-panel table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #555;
+}
+
+.card-panel table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.card-panel table tbody tr:nth-child(even) {
+    background-color: #444;
+}
+
+.card-panel table tbody tr:nth-child(odd) {
+    background-color: #333;
 }

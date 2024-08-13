@@ -26,7 +26,7 @@ class IndexMdl {
         }
 
         $insert .= " NOW())";
-
+//        return $insert;
         try {
             $conn->query($insert);
             $arr_ret = array("estado" => true, "description" => "Tu registro fue un éxito!", "details" => '', 'data' => array());

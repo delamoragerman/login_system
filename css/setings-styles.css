@@ -1,5 +1,6 @@
 /* General styles for the settings page */
 .setings {
+    margin-top: -60px;
     padding: 20px;
 }
 
@@ -62,4 +63,9 @@
 
 .setings .card-panel form input[type="submit"]:hover {
     background-color: #0056b3;
+}
+.setings form input:focus,.setings form textarea:focus{
+    border-color: orangered; 
+    outline: none;  
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  
 }

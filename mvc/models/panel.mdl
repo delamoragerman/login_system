@@ -3,7 +3,7 @@
 class PanelMdl {
 
     public function getUser($conn, $userName) {
-        $consulta = "SELECT name FROM users WHERE userName = '".$userName."'";
+        $consulta = "SELECT name FROM users WHERE userName = '" . $userName . "'";
         //$consulta = "SELECT name FROM users WHERE userName = 'Genesys'";
         try {
             $stmt = $conn->prepare($consulta);
@@ -19,9 +19,13 @@ class PanelMdl {
         }
     }
 
-    public function showUsers($conn, $rec) {
+//    public function showLogs($conn, $rec){
+//        
+//    }
 
-        $consulta = "SELECT `name`, `lastName`, `email`, `phone` FROM users";
+    public function showTeamWork($conn, $rec) {
+
+        $consulta = "SELECT * FROM developers";
         try {
             $queryData = $conn->query($consulta);
             $usuarios = $queryData->fetchAll(PDO::FETCH_ASSOC);
@@ -41,6 +45,42 @@ class PanelMdl {
         } catch (PDOException $e) {
             return json_encode(array("estado" => false, "description" => 'Error al obtener consultas.', "details" => $e->getMessage(), 'data' => array()));
         }
+    }
+    
+    public function searchUserByEmail($conn, $email) {
+    $consulta = "SELECT `id_us`, `name`, `lastName`, `phone`, `email`, `userName`, `date` FROM users    WHERE `email` = :email";
+
+    try {
+        $stmt = $conn->prepare($consulta);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            return json_encode(array("estado" => true, "data" => $user));
+        } else {
+            return json_encode(array("estado" => false, "description" => "User not found."));
+        }
+    } catch (PDOException $e) {
+        return json_encode(array("estado" => false, "description" => 'Error al buscar usuario.', "details" => $e->getMessage(), 'data' => array()));
+    }
+}
+
+
+    public function showUsers($conn, $rec) {
+
+        $consulta = "SELECT `name`, `lastName`, `email`, `phone` FROM users";
+        try {
+            $queryData = $conn->query($consulta);
+            $usuarios = $queryData->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($usuarios);
+        } catch (PDOException $e) {
+            return json_encode(array("estado" => false, "description" => 'Error al obtener usuarios.', "details" => $e->getMessage(), 'data' => array()));
+        }
+    }
+    
+    public function showCustomers($conn, $rec){
+        
     }
 
 }

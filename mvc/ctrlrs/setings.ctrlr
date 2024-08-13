@@ -21,30 +21,29 @@ class SetingsCtrlr {
         include ('views/header.view.php');
         include ('views/setings.view.php');
         include ('views/footer_js.view.php');
-        echo '<script type="text/javascript" src="../mvc/js/panel.js"></script>';
+        echo '<script type="text/javascript" src="../mvc/js/setings.js"></script>';
         include ('views/footer.view.php');
     }
-
-    public function getUser() {
-//        var_dump($_SESSION);
-        session_start();
-        $userName = $_SESSION['userName']; // Asumimos que el ID del usuario está almacenado en la sesión
-        $resp = $this->model->getUser($this->conn, $userName);
-        echo $resp;
+    
+    public function addDeveloper(){
+        
+        $respuesta = $this->model->addDeveloper($this->conn, $_POST);
+        
+        echo json_encode($respuesta);
     }
-
-    public function showUsers() {
-
-        $resp = $this->model->showUsers($this->conn, $_POST);
-
-        echo ($resp);
+    
+    public function addProject(){
+        
+        $respuesta = $this->model->addProject($this->conn, $_POST);
+        
+        echo json_encode($respuesta);
     }
-
-    public function showMessages() {
-
-        $resp = $this->model->showMessages($this->conn, $_POST);
-
-        echo ($resp);
+    
+    public function updatePrice(){
+        
+        $respuesta = $this->model->updatePrice($this->conn, $_POST);
+        
+        echo json_enconde($respuesta);
     }
 
 }

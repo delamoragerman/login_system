@@ -34,17 +34,43 @@ class PanelCtrlr {
         echo $resp;
     }
 
+    public function showLogs() {
+        $resp = $this->model->showLogs($this->conn, $_POST);
+
+        echo ($resp);
+    }
+
+    public function showTeamWork() {
+        $resp = $this->model->showTeamWork($this->conn, $_POST);
+
+        echo ($resp);
+    }
+    
+    public function showMessages() {
+
+        $resp = $this->model->showMessages($this->conn, $_POST);
+
+        echo ($resp);
+    }
+
+    public function searchUserByEmail() {
+        $email = $_POST['email'];
+        $resp = $this->model->searchUserByEmail($this->conn, $email);
+
+        echo ($resp);
+    }
+    
     public function showUsers() {
 
         $resp = $this->model->showUsers($this->conn, $_POST);
 
         echo ($resp);
     }
-
-    public function showMessages() {
-
-        $resp = $this->model->showMessages($this->conn, $_POST);
-
+    
+    public function showCustomers(){
+        
+        $resp = $this->model->showCustomers($this->conn, $_POST);
+        
         echo ($resp);
     }
 

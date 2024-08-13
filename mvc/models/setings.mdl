@@ -2,6 +2,49 @@
 
 class SetingsMdl {
 
-    
+    public function addDeveloper($conn, $rec) {
+
+        // Verificar si el dni ya existe en la base de datos
+        $checkDniQuery = "SELECT COUNT(*) as total FROM developers WHERE dni = :dni";
+        $stmtCheckDni = $conn->prepare($checkDniQuery);
+        $stmtCheckDni->bindParam(':dni', $rec['dni']);
+        $stmtCheckDni->execute();
+        $dniExists = $stmtCheckDni->fetch(PDO::FETCH_ASSOC);
+
+        if ($dniExists['total'] > 0) {
+            // El correo electrónico ya existe, mostrar alerta
+            return json_encode(array("estado" => false, "description" => "El correo electrónico ya existe. Por favor, utiliza otro.", "datos" => array()));
+        }
+
+        $insert = "INSERT INTO developers VALUES(DEFAULT, ";
+        foreach ($rec as $key => $value) {
+            if ($key == "contribution") {
+                $insert .= " '$value'";
+            } else {
+                $insert .= " '$rec[$key]',";
+            }
+        }
+
+        $insert .= ")";
+//        return $insert;
+        try {
+            $conn->query($insert);
+            $arr_ret = array("estado" => true, "description" => "Tu registro fue un éxito!", "details" => '', 'data' => array());
+        } catch (PDOException $e) {
+            $arr_ret = array("estado" => false, "description" => 'Error al registrar usuario.', "details" => $e->getMessage(), 'data' => array());
+        }
+
+        // Comprobar que solo haya un dni en bd
+        $consulta = "SELECT COUNT(*) as total FROM developers";
+        $queryData = $conn->query($consulta);
+        $filas = $queryData->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($filas[0]["total"] > 0) {
+            $rec["dni"] = 1;
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 
 }
