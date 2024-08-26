@@ -70,3 +70,24 @@ input[type="password"] {
 .btn-clear:hover{
     color: #007bff;
 }
+@media (max-width: 800px) {
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    /* Para evitar el desbordamiento del contenido en las tablas */
+    table {
+        width: 100%;
+        table-layout: fixed; /* Asegura que las columnas no se expandan más allá de lo permitido */
+    }
+
+    table th, table td {
+        word-wrap: break-word; /* Permite que el texto se ajuste dentro de las celdas */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Agrega puntos suspensivos si el contenido es demasiado largo */
+    }
+}
+

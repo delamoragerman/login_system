@@ -29,7 +29,7 @@
             </div>
         </div>
         <!-- Querys Table -->
-        <div class="col-sm-12 col-lg-9" id="_queryTable" style="display: none;">
+        <div class="col-sm-12 col-lg-10" id="_queryTable" style="display: none;">
             <div class="card-panel">
                 <div class="card-body">
                     <h4><i class="fas fa-users"></i>Querys</h4>
