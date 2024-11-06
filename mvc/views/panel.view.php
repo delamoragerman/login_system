@@ -56,7 +56,7 @@
                 <div class="card-body">
                     <h4><i class="fas fa-search"></i>Search User</h4>
                     <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Example@gmail.com" aria-label="Search">
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                         <input type="reset" class="btn btn-outline-warning my-2 my-sm-0"value="Refresh">
                     </form>

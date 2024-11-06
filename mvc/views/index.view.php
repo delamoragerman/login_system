@@ -14,8 +14,8 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <input type="reset" value="Reset" class="btn btn-clear">
                 <input type="submit" value="Login" class="btn btn-primary">
+                <input type="reset" value="Reset" class="btn btn-clear">
                 <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#modal_singUp">
                     SingUp
                 </button>
