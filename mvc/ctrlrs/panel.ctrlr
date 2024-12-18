@@ -45,7 +45,7 @@ class PanelCtrlr {
 
         echo ($resp);
     }
-    
+
     public function showMessages() {
 
         $resp = $this->model->showMessages($this->conn, $_POST);
@@ -59,18 +59,18 @@ class PanelCtrlr {
 
         echo ($resp);
     }
-    
+
     public function showUsers() {
 
         $resp = $this->model->showUsers($this->conn, $_POST);
 
         echo ($resp);
     }
-    
-    public function showCustomers(){
-        
+
+    public function showCustomers() {
+
         $resp = $this->model->showCustomers($this->conn, $_POST);
-        
+
         echo ($resp);
     }
 

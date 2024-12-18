@@ -24,25 +24,25 @@ class SetingsCtrlr {
         echo '<script type="text/javascript" src="../mvc/js/setings.js"></script>';
         include ('views/footer.view.php');
     }
-    
-    public function addDeveloper(){
-        
+
+    public function addDeveloper() {
+
         $respuesta = $this->model->addDeveloper($this->conn, $_POST);
-        
+
         echo json_encode($respuesta);
     }
-    
-    public function addProject(){
-        
+
+    public function addProject() {
+
         $respuesta = $this->model->addProject($this->conn, $_POST);
-        
+
         echo json_encode($respuesta);
     }
-    
-    public function updatePrice(){
-        
+
+    public function updatePrice() {
+
         $respuesta = $this->model->updatePrice($this->conn, $_POST);
-        
+
         echo json_enconde($respuesta);
     }
 
